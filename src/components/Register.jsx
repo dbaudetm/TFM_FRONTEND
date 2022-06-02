@@ -58,7 +58,8 @@ const Register = () => {
 
 
             //${import.meta.env.VITE_backendUrl}
-            const res = await axios.post(`https://tfmevaluatefilm.herokuapp.com/api/usuarios/register`, { nombreUsuario, passwordUsuario, emailUsuario })
+            console.log(import.meta.env.VITE_backendUrl)
+            const res = await axios.post(`${import.meta.env.VITE_backendUrl}/api/usuarios/register`, { nombreUsuario, passwordUsuario, emailUsuario })
             console.log(res.data)
 
             if (res.data.error != undefined) {
