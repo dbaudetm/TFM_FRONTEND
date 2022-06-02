@@ -56,10 +56,16 @@ const Register = () => {
         console.log(body)
         try {
 
-
+            const config = {
+                headers: {
+                    'Access-Control-Allow-Origin': '*',
+                    'Access-Control-Allow-Headers': '*',
+                    'Access-Control-Allow-Credentials': 'true'
+                }
+            }
             //https://tfmevaluatefilm.herokuapp.com
             console.log(import.meta.env.VITE_backendUrl)
-            const res = await axios.post(`https://tfmevaluatefilm.herokuapp.com/api/usuarios/register`, { nombreUsuario, passwordUsuario, emailUsuario })
+            const res = await axios.post(`https://tfmevaluatefilm.herokuapp.com/api/usuarios/register`, { nombreUsuario, passwordUsuario, emailUsuario }, config)
             console.log(res.data)
 
             if (res.data.error != undefined) {
