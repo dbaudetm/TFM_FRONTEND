@@ -22,7 +22,7 @@ const ForgetPassword = () => {
 
             }
 
-            const data = await axios.post(`${import.meta.env.VITE_backendUrl}/api/usuarios/recovery`, datos)
+            const data = await axios.post(`https://tfmevaluatefilm.herokuapp.com/api/usuarios/recovery`, datos)
 
             if (data.data.mesage != undefined) {
 

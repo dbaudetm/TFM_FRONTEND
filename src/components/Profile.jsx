@@ -81,7 +81,7 @@ const Profile = () => {
 
 
 
-            const respuesta = await axios.post(`${import.meta.env.VITE_backendUrl}/api/usuarios/deleteUser`, datos, config)
+            const respuesta = await axios.post(`https://tfmevaluatefilm.herokuapp.com/api/usuarios/deleteUser`, datos, config)
 
 
             if (respuesta.data.mesage == "Se ha borrado") {
@@ -152,7 +152,7 @@ const Profile = () => {
 
             }
 
-            const respuesta = await axios.post(`${import.meta.env.VITE_backendUrl}/api/usuarios/updateUser`, datos, config)
+            const respuesta = await axios.post(`https://tfmevaluatefilm.herokuapp.com/api/usuarios/updateUser`, datos, config)
 
             console.log(respuesta.data.error)
 

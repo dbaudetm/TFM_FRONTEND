@@ -109,7 +109,7 @@ const MyVotes2 = () => {
 
 
 
-            const datos = await axios.post(`${import.meta.env.VITE_backendUrl}/api/usuarios/searchComentByUser`, usuario, config)
+            const datos = await axios.post(`https://tfmevaluatefilm.herokuapp.com/api/usuarios/searchComentByUser`, usuario, config)
             console.log("datos iguales")
             console.log(datos)
             setComentarios(datos.data)
@@ -119,7 +119,7 @@ const MyVotes2 = () => {
                 id: datosEntrada.id
 
             }
-            const datos2 = await axios.post(`${import.meta.env.VITE_backendUrl}/api/usuarios/userData`, usuario2, config)
+            const datos2 = await axios.post(`https://tfmevaluatefilm.herokuapp.com/api/usuarios/userData`, usuario2, config)
             console.log("respuesta")
             console.log(datos2.data)
             if (datos2.data != undefined) {

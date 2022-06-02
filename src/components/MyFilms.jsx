@@ -30,7 +30,7 @@ const MyFilms = () => {
 
             };
 
-            const usuario = await axios.get(`${import.meta.env.VITE_backendUrl}/api/usuarios/user`, config)
+            const usuario = await axios.get(`https://tfmevaluatefilm.herokuapp.com/api/usuarios/user`, config)
             const usuarioData = usuario.data
 
 

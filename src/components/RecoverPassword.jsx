@@ -21,7 +21,7 @@ const RecoverPassword = () => {
             try {
 
 
-                const data = await axios.get(`${import.meta.env.VITE_backendUrl}/api/usuarios/confirm2/${token}`)
+                const data = await axios.get(`https://tfmevaluatefilm.herokuapp.com/api/usuarios/confirm2/${token}`)
                 if (data.data.mesage == "Usuario confirmado") {
 
                     setConfirmado(true)
@@ -69,7 +69,7 @@ const RecoverPassword = () => {
 
                     }
 
-                    const data = await axios.post(`${import.meta.env.VITE_backendUrl}/api/usuarios/password/${token}`, passwordUsuario)
+                    const data = await axios.post(`https://tfmevaluatefilm.herokuapp.com/api/usuarios/password/${token}`, passwordUsuario)
                     if (data.data.mesage != undefined) {
 
                         setConfirmado(false)

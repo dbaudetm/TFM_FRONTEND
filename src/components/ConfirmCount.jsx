@@ -12,7 +12,7 @@ const ConfirmCount = () => {
         const confirm = async () => {
             console.log("este es el id que entra", id)
             try {
-                const res = await axios.get(`${import.meta.env.VITE_backendUrl}/api/usuarios/confirm/${id}`)
+                const res = await axios.get(`https://tfmevaluatefilm.herokuapp.com/api/usuarios/confirm/${id}`)
                 console.log(res.data)
             } catch (error) {
                 console.log(error.data)

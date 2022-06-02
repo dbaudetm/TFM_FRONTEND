@@ -113,12 +113,12 @@ const MyVotes = () => {
 
 
 
-            const datos = await axios.post(`${import.meta.env.VITE_backendUrl}/api/usuarios/searchComentByUser`, usuario, config)
+            const datos = await axios.post(`https://tfmevaluatefilm.herokuapp.com/api/usuarios/searchComentByUser`, usuario, config)
             console.log("datos iguales")
             const array = datos.data
 
 
-            const usuario2 = await axios.get(`${import.meta.env.VITE_backendUrl}/api/usuarios/user`, config)
+            const usuario2 = await axios.get(`https://tfmevaluatefilm.herokuapp.com/api/usuarios/user`, config)
             const usuarioData = usuario2.data
             if (usuarioData != undefined) {
 
