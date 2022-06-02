@@ -63,11 +63,34 @@ const Register = () => {
                     'Access-Control-Allow-Credentials': 'true'
                 }
             }
-            //https://tfmevaluatefilm.herokuapp.com
+            //${import.meta.env.VITE_backendUrl}
             console.log(import.meta.env.VITE_backendUrl)
-            const res = await axios.post(`https://tfmevaluatefilm.herokuapp.com/api/usuarios/register`, config, { nombreUsuario, passwordUsuario, emailUsuario })
+            console.log(body)
+            const res = await axios.post(`https://tfmevaluatefilm.herokuapp.com/api/usuarios/register`, { nombreUsuario, passwordUsuario, emailUsuario }, config)
             console.log(res)
-            console.log(res.data)
+            // const response = await fetch(`${import.meta.env.VITE_backendUrl}/api/usuarios/register`, {
+
+            //     // Adding method type
+            //     method: "POST",
+
+            //     // Adding body or contents to send
+            //     body: JSON.stringify({
+            //         body
+            //     }),
+
+            //     // Adding headers to the request
+            //     headers: {
+            //         "Content-type": "application/json; charset=UTF-8"
+            //     }
+            // })
+
+
+
+            // const response = await fetch('https://api.npms.io/v2/search?q=react');
+            // const data = await response.json()
+            // console.log(response)
+            // console.log(response.data)
+            // console.log(data)
 
             if (res.data.error != undefined) {
 

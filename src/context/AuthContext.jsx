@@ -23,7 +23,7 @@ const AuthProvider = ({ children }) => {
                 const config = {
                     headers: { Authorization: `Bearer ${token}` }
                 };
-                const res = await axios.get(`https://tfmevaluatefilm.herokuapp.com/api/usuarios/profile`, config)
+                const res = await axios.get(`${import.meta.env.VITE_backendUrl}/api/usuarios/profile`, config)
                 console.log(res.data)
                 if (res.data != undefined) {
                     await localStorage.setItem('tokenAccess', res.data)
@@ -52,7 +52,7 @@ const AuthProvider = ({ children }) => {
                     const config = {
                         headers: { Authorization: `Bearer ${token}` }
                     };
-                    const res = await axios.get(`https://tfmevaluatefilm.herokuapp.com/api/usuarios/profile`, config)
+                    const res = await axios.get(`${import.meta.env.VITE_backendUrl}/api/usuarios/profile`, config)
                     console.log(res.data)
                     await localStorage.setItem('tokenAccess', res.data)
                     await setAuthLogin(res.data)

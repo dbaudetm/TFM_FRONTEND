@@ -66,7 +66,7 @@ export const Find = () => {
                     }, qwery: qwery
 
                 };
-                const { data } = await axios.get(`https://tfmevaluatefilm.herokuapp.com/api/usuarios/search/${busqueda}`, config)
+                const { data } = await axios.get(`${import.meta.env.VITE_backendUrl}/api/usuarios/search/${busqueda}`, config)
                 console.log(data.error)
                 if (data.error != undefined) {
                     setCargado(true)

@@ -42,9 +42,9 @@ const Film = (props) => {
                 }
 
             };
-            const { data } = await axios.get(`https://tfmevaluatefilm.herokuapp.com/api/usuarios/verPelicula/${id}`, config)
-            const usuario = await axios.get(`https://tfmevaluatefilm.herokuapp.com/api/usuarios/user`, config)
-            const comentariosData = await axios.get(`https://tfmevaluatefilm.herokuapp.com/api/usuarios/searchComentByFilm`, config)
+            const { data } = await axios.get(`${import.meta.env.VITE_backendUrl}/api/usuarios/verPelicula/${id}`, config)
+            const usuario = await axios.get(`${import.meta.env.VITE_backendUrl}/api/usuarios/user`, config)
+            const comentariosData = await axios.get(`${import.meta.env.VITE_backendUrl}/api/usuarios/searchComentByFilm`, config)
             const comentariosTotales = comentariosData.data
 
             const usuarioData = usuario.data
@@ -115,7 +115,7 @@ const Film = (props) => {
                     }
 
                 };
-                await axios.get(`https://tfmevaluatefilm.herokuapp.com/api/usuarios/addFollow/${id}`, config)
+                await axios.get(`${import.meta.env.VITE_backendUrl}/api/usuarios/addFollow/${id}`, config)
 
                 await setSeguimiento("1")
                 document.getElementById("mySelect").value = "1"
@@ -129,7 +129,7 @@ const Film = (props) => {
                     }
 
                 };
-                await axios.get(`https://tfmevaluatefilm.herokuapp.com/api/usuarios/addViews/${id}`, config)
+                await axios.get(`${import.meta.env.VITE_backendUrl}/api/usuarios/addViews/${id}`, config)
                 await setSeguimiento("2")
                 document.getElementById("mySelect").value = "2"
                 return
@@ -144,7 +144,7 @@ const Film = (props) => {
                     }
 
                 };
-                await axios.get(`https://tfmevaluatefilm.herokuapp.com/api/usuarios/NotViewFollow/${id}`, config)
+                await axios.get(`${import.meta.env.VITE_backendUrl}/api/usuarios/NotViewFollow/${id}`, config)
                 await setSeguimiento("0")
                 document.getElementById("mySelect").value = "0"
                 return
@@ -229,7 +229,7 @@ const Film = (props) => {
                     Authorization: `Bearer ${tokenAccess}`
                 }
             };
-            const salida = await axios.post(`https://tfmevaluatefilm.herokuapp.com/api/usuarios/updateComent/`, comentario, config)
+            const salida = await axios.post(`${import.meta.env.VITE_backendUrl}/api/usuarios/updateComent/`, comentario, config)
 
             if (salida.data.error == undefined) {
 
@@ -286,7 +286,7 @@ const Film = (props) => {
                         Authorization: `Bearer ${tokenAccess}`
                     }
                 };
-                const salida = await axios.post(`https://tfmevaluatefilm.herokuapp.com/api/usuarios/deleteComent/`, comentario, config)
+                const salida = await axios.post(`${import.meta.env.VITE_backendUrl}/api/usuarios/deleteComent/`, comentario, config)
 
                 if (salida.data.error == undefined) {
 
@@ -351,7 +351,7 @@ const Film = (props) => {
                     Authorization: `Bearer ${tokenAccess}`
                 }
             };
-            const salida = await axios.post(`https://tfmevaluatefilm.herokuapp.com/api/usuarios/createComent/`, valores, config)
+            const salida = await axios.post(`${import.meta.env.VITE_backendUrl}/api/usuarios/createComent/`, valores, config)
             console.log(salida.data)
             console.log(salida.data.error == undefined)
             if (salida.data.error == undefined) {
