@@ -66,31 +66,31 @@ const Register = () => {
             //${import.meta.env.VITE_backendUrl}
             console.log(import.meta.env.VITE_backendUrl)
             console.log(body)
-            const res = await axios.post(`https://tfmevaluatefilm.herokuapp.com/api/usuarios/register`, { nombreUsuario, passwordUsuario, emailUsuario }, config)
-            console.log(res)
-            // const response = await fetch(`${import.meta.env.VITE_backendUrl}/api/usuarios/register`, {
+            // const res = await axios.post(`https://tfmevaluatefilm.herokuapp.com/api/usuarios/register`, { nombreUsuario, passwordUsuario, emailUsuario }, config)
 
-            //     // Adding method type
-            //     method: "POST",
+            const res = await fetch(`https://tfmevaluatefilm.herokuapp.com/api/usuarios/register`, {
 
-            //     // Adding body or contents to send
-            //     body: JSON.stringify({
-            //         body
-            //     }),
+                // Adding method type
+                method: "POST",
 
-            //     // Adding headers to the request
-            //     headers: {
-            //         "Content-type": "application/json; charset=UTF-8"
-            //     }
-            // })
+                // Adding body or contents to send
+                body: JSON.stringify(body),
+
+                // Adding headers to the request
+                headers: {
+                    "Content-type": "application/json; charset=UTF-8",
+                    'Access-Control-Allow-Origin': '*',
+                    'Access-Control-Allow-Headers': '*',
+                    'Access-Control-Allow-Credentials': 'true'
+                }
+            })
 
 
 
             // const response = await fetch('https://api.npms.io/v2/search?q=react');
-            // const data = await response.json()
-            // console.log(response)
-            // console.log(response.data)
-            // console.log(data)
+            const data = await res.json()
+
+            console.log(data)
 
             if (res.data.error != undefined) {
 
